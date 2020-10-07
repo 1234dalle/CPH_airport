@@ -12,19 +12,19 @@ public class Repository {
     private Connection conn;
 
     public Repository() {
-        this.conn = com.company.DatabaseConnectionManager.getDatabaseConnection();
+        this.conn = DatabaseConnectionManager.getDatabaseConnection();
     }
 
-    ArrayList<com.company.Arrival> arrivalList = new ArrayList<>();
+    ArrayList<Arrival> arrivalList = new ArrayList<>();
 
 
-    public List<com.company.Arrival> readAll() {
-        ArrayList<com.company.Arrival> allArrivals = new ArrayList<>();
+    public List<Arrival> readAll() {
+        ArrayList<Arrival> allArrivals = new ArrayList<>();
         try {
             PreparedStatement readAllArrivals = conn.prepareStatement("SELECT snusId, name, brand, price, strength, country, img FROM snus");
             ResultSet rs = readAllArrivals.executeQuery();
             while (rs.next()) {
-                com.company.Arrival tempArrival = new com.company.Arrival();
+                Arrival tempArrival = new Arrival();
                 tempArrival.setFlyId(rs.getInt(1));
                 tempArrival.setFlyType(rs.getString(2));
                 tempArrival.setOrigin(rs.getString(3));

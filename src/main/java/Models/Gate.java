@@ -1,6 +1,7 @@
 package Models;
 
-public class Gate {
+public class
+Gate {
 
     Integer gateId;
     String gateSize;

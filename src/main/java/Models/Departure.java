@@ -2,7 +2,7 @@ package Models;
 
 import java.util.Date;
 
-public class Departure extends com.company.Flight {
+public class Departure extends Flight {
 
     String STD;
 
